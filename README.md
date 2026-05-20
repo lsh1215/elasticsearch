@@ -1,4 +1,4 @@
-[English](README.md) | [한국어](README-ko.md)
+[한국어](README.md) | [English](README-en.md)
 
 # Elasticsearch Study
 
@@ -6,7 +6,7 @@
 ![OpenSearch Dashboards](https://img.shields.io/badge/OpenSearch_Dashboards-005EB8?style=flat-square&logo=opensearch&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-A hands-on study repository for learning Elasticsearch concepts through OpenSearch-compatible experiments, documentation, and repeatable local environments.
+Elasticsearch 개념을 OpenSearch 호환 실험으로 직접 확인하고, 문서와 기록으로 남기기 위한 학습 저장소입니다.
 
 ## Table of Contents
 
@@ -21,17 +21,17 @@ A hands-on study repository for learning Elasticsearch concepts through OpenSear
 
 ## Overview
 
-This repository is for studying search-engine internals and Elasticsearch-style APIs by running small, documented experiments.
+이 저장소는 검색 엔진 내부 동작, Elasticsearch 스타일 API, 인덱싱과 쿼리 흐름을 작은 실험 단위로 학습하기 위해 사용합니다.
 
-The current phase focuses on a local OpenSearch stack:
+현재 단계는 로컬 OpenSearch 실행 환경을 만드는 데 집중합니다.
 
 | Phase | Focus | Status |
 |-------|-------|--------|
-| 1 | Local OpenSearch and Dashboards runtime | Ready |
-| 2 | Indexing, mappings, analyzers, and query DSL experiments | Planned |
-| 3 | Performance notes, troubleshooting logs, and study documents | Planned |
+| 1 | 로컬 OpenSearch와 Dashboards 실행 환경 | Ready |
+| 2 | 인덱싱, 매핑, 애널라이저, Query DSL 실험 | Planned |
+| 3 | 성능 기록, 문제 해결 로그, 학습 문서 정리 | Planned |
 
-OpenSearch is used because it preserves many Elasticsearch-compatible APIs while being easy to run locally with Docker.
+OpenSearch는 Elasticsearch와 호환되는 API를 많이 제공하면서 Docker로 간단히 실행할 수 있어 학습용 런타임으로 사용합니다.
 
 ## System Architecture
 
@@ -64,46 +64,46 @@ OpenSearch is used because it preserves many Elasticsearch-compatible APIs while
 
 | Category | Technology | Purpose |
 |----------|------------|---------|
-| Search engine | OpenSearch | Elasticsearch-compatible search experiments |
-| Search UI | OpenSearch Dashboards | Explore indexes, queries, and cluster state |
-| Runtime | Docker Compose | Reproducible local environment |
-| Configuration | YAML / env vars | Local stack settings and version control |
+| 검색 엔진 | OpenSearch | Elasticsearch 호환 검색 실험 |
+| 검색 UI | OpenSearch Dashboards | 인덱스, 쿼리, 클러스터 상태 확인 |
+| 실행 환경 | Docker Compose | 재현 가능한 로컬 환경 구성 |
+| 설정 | YAML / env vars | 로컬 스택 설정과 버전 관리 |
 
 ## Domain Model
 
-This repository does not define an application domain yet. Study experiments will introduce small indexes as needed, such as:
+아직 별도의 애플리케이션 도메인은 정의하지 않았습니다. 실험 주제에 따라 작은 인덱스를 추가해 사용할 예정입니다.
 
 | Index | Purpose |
 |-------|---------|
-| `elasticsearch-study-notes` | Smoke-test and study-note documents |
-| Future experiment indexes | Analyzer, mapping, ranking, and aggregation practice |
+| `elasticsearch-study-notes` | 스모크 테스트와 학습 메모 문서 |
+| 향후 실험용 인덱스 | 애널라이저, 매핑, 랭킹, 집계 연습 |
 
 ## Key Design Decisions
 
 | Decision | Reason |
 |----------|--------|
-| Use OpenSearch images | Keeps the stack open and close to Elasticsearch-style APIs for study purposes |
-| Run a single node | Reduces local setup cost while preserving core indexing and query workflows |
-| Disable the security plugin locally | Avoids authentication friction for experiments on a private machine |
-| Keep configuration in Docker Compose | Makes every experiment reproducible from a clean checkout |
+| OpenSearch 이미지 사용 | Elasticsearch 스타일 API를 학습하기 쉽고 공개적으로 실행 가능한 스택 구성 |
+| 싱글 노드 구성 | 로컬 실행 부담을 낮추면서 핵심 색인/검색 흐름을 유지 |
+| 로컬 보안 플러그인 비활성화 | 개인 개발 환경에서 인증보다 실험 속도를 우선 |
+| Docker Compose에 설정 집중 | 깨끗한 체크아웃에서도 같은 환경을 재현 |
 
 ## Getting Started
 
 ### Requirements
 
-- Docker Desktop or a compatible Docker Engine
+- Docker Desktop 또는 호환 가능한 Docker Engine
 - Docker Compose v2
-- At least 2 GB of available memory for the local stack
+- 로컬 스택 실행을 위한 여유 메모리 2 GB 이상
 
 ### Configure
 
-Copy the example environment file if you want to pin or override values:
+값을 고정하거나 덮어쓰고 싶다면 예시 env 파일을 복사합니다.
 
 ```bash
 cp .env.example .env
 ```
 
-Default values are already provided by `docker-compose.yml`, so this step is optional.
+기본값은 `docker-compose.yml`에 이미 들어 있어 이 단계는 선택 사항입니다.
 
 ### Start
 
@@ -125,7 +125,7 @@ curl http://localhost:9200
 curl 'http://localhost:9200/_cluster/health?pretty'
 ```
 
-Index and search a sample document:
+샘플 문서를 색인하고 검색합니다.
 
 ```bash
 curl -X PUT http://localhost:9200/elasticsearch-study-notes/_doc/1 \
@@ -149,10 +149,10 @@ docker compose down
 ├── .env.example
 ├── .gitignore
 ├── README.md
-├── README-ko.md
+├── README-en.md
 └── docker-compose.yml
 ```
 
 ## License
 
-No license has been selected yet. Add one before distributing or accepting external contributions.
+아직 라이선스를 선택하지 않았습니다. 외부 공개나 기여를 받기 전 라이선스를 추가하세요.
