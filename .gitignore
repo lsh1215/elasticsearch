@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# IDEs / editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Docker / local runtime artifacts
+data/
+tmp/
+
+# Language/tool caches
+.cache/
+.pytest_cache/
+__pycache__/
+node_modules/
+dist/
+build/
