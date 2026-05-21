@@ -16,6 +16,7 @@ A hands-on study repository for learning Elasticsearch concepts through OpenSear
 - [Domain Model](#domain-model)
 - [Key Design Decisions](#key-design-decisions)
 - [Getting Started](#getting-started)
+- [Study Workflow](#study-workflow)
 - [Project Structure](#project-structure)
 - [License](#license)
 
@@ -142,12 +143,30 @@ curl 'http://localhost:9200/elasticsearch-study-notes/_search?q=status:ok&pretty
 docker compose down
 ```
 
+## Study Workflow
+
+This repository organizes conversation-driven study notes with the following structure.
+
+| Path | Role |
+|------|------|
+| `docs/study-log/` | Daily study flow, meaningful questions, summaries, experiment results, and unresolved points |
+| `docs/concepts/` | Final concept notes with root-cause exploration and references |
+| `docs/deep-dives/` | Broad questions, comparisons, history, and design background across concepts |
+| `docs/labs/` | Commands, outputs, errors, fixes, and lessons learned |
+| `omx_wiki/` | Verified reusable knowledge for Codex retrieval. The user creates this directory directly from Obsidian |
+
 ## Project Structure
 
 ```text
 .
+├── AGENTS.md
 ├── .env.example
 ├── .gitignore
+├── docs
+│   ├── concepts
+│   ├── deep-dives
+│   ├── labs
+│   └── study-log
 ├── README.md
 ├── README-en.md
 └── docker-compose.yml
